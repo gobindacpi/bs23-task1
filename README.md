@@ -1,7 +1,5 @@
 ```
 ###Kubernetes Install On Ubuntu 20.4
-
-###Install Docker 
 ```
 ```
 sudo apt-get remove docker docker-engine docker.io containerd runc
