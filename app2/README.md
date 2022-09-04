@@ -17,7 +17,7 @@ docker build -t app2 .
 docker tag app2 gobindacpi/bs23-app2:01
 ```
 #finally push to docker hub 
-''' 
+```
 docker push gobindacpi/bs23-app2:01
 ```
 
