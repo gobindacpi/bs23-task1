@@ -17,7 +17,7 @@ docker build -t app1 .
 ```
 #Then rename name the Docker image 
 ```
-docker tag app1 munnaeeebd/bs23:app1
+docker tag app1 gobindacpi/bs23-app1:01
 ```
 #finally push to docker hub
 '''
