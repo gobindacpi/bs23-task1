@@ -66,6 +66,7 @@ sudo sysctl net.bridge.bridge-nf-call-iptables=1
  ***************************************************************************************
  
  ```
+ 
  root@master:~# kubectl get pods --all-namespaces
 NAMESPACE          NAME                                       READY   STATUS    RESTARTS   AGE
 calico-apiserver   calico-apiserver-5b68b6b54-mp6zg           1/1     Running   0          20m
