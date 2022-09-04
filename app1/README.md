@@ -3,6 +3,14 @@
 ```
 composer create-project laravel/laravel app1
 ```
+To change "hellow I am App1", go to "vi /app1/public/index.php", type below and save&exit.
+
+```
+<?php
+echo "Hello I am App1 \n";
+?>
+```
+
 #Now build the docker image
 ```
 docker build -t app1 .
@@ -12,6 +20,6 @@ docker build -t app1 .
 docker tag app1 munnaeeebd/bs23:app1
 ```
 #finally push to docker hub
-''''
+'''
 docker push gobindacpi/bs23-app1:01
 ```
