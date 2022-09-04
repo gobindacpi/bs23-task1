@@ -12,8 +12,8 @@ echo   "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/doc
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 sudo apt-get update
 systemctl stauts docker
-systemctl status docker
 sudo mkdir /etc/docker
+
 cat <<EOF | sudo tee /etc/docker/daemon.json
 { "exec-opts": ["native.cgroupdriver=systemd"],
 "log-driver": "json-file",
@@ -27,7 +27,7 @@ EOF
  sudo systemctl daemon-reload
  sudo systemctl restart docker
 ```
-##Follow the step for all nodes to install Kubernetes
+##Follow the step for all nodes
 
 ```
 sudo apt update
@@ -49,19 +49,13 @@ lsmod | grep br_netfilter
 sudo sysctl net.bridge.bridge-nf-call-iptables=1
 ```
 
-Now Start Below Command on Master Node
- 
+#Now Start Below Command on Master Node
  
  ```
  sudo kubeadm init --pod-network-cidr=10.244.0.0/16
  mkdir -p $HOME/.kube
- kubectl get node
  kubectl get pod -A
- kubectl get node
- kubectl get pod -A
- kubectl get node
  kubectl get componentstatus
- kubectl get node
  kubectl get pod -A
  wget https://docs.projectcalico.org/manifests/custom-resources.yaml           ;;;edit and set ip block is 10.244.0.0/16
  wget https://docs.projectcalico.org/manifests/tigera-operator.yaml
